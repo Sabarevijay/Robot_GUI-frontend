@@ -8,17 +8,17 @@ Rectangle {
     width: Constants.width
     height: Constants.height
 
-    // color: Constants.backgroundColor
-    gradient: Gradient {
-        GradientStop {
-            position: 0.0
-            color: "#F5F5F5"
-        }
-        GradientStop {
-            position: 1.0
-            color: "#E0E0E0"
-        }
-    }
+    color: Constants.backgroundColor
+    // gradient: Gradient {
+    //     GradientStop {
+    //         position: 0.0
+    //         color: "#F5F5F5"
+    //     }
+    //     GradientStop {
+    //         position: 1.0
+    //         color: "#E0E0E0"
+    //     }
+    // }
     Row {
         id: mainLayout
         anchors.top: parent.top
@@ -29,7 +29,7 @@ Rectangle {
         Rectangle {
             id: robot
             width: 950
-            height: 770
+            height: 700
             color: "lightblue"
             border.color: "#90EE90"
             border.width: 1.5
@@ -39,9 +39,9 @@ Rectangle {
         Rectangle {
             id: coordControls
             width: 298
-            height: 461
+            height: 430
             anchors.top: parent.top
-            anchors.topMargin: 15
+            anchors.topMargin: 10
             gradient: Gradient {
                 GradientStop {
                     position: 0.0
@@ -58,7 +58,7 @@ Rectangle {
 
             Column {
                 id: cartesianControl
-                spacing: 15
+                spacing: 10
                 anchors.top: parent.top
                 anchors.topMargin: 15
                 width: parent.width // Set width to parent's width
@@ -104,7 +104,7 @@ Rectangle {
                     model: ["X", "Y", "Z", "Rx", "Ry", "Rz"]
                     delegate: Row {
                         anchors.horizontalCenter: parent.horizontalCenter
-                        spacing: 15
+                        spacing: 20
                         Text {
                             text: modelData
                             font.bold: true
@@ -114,14 +114,14 @@ Rectangle {
                         Rectangle {
                             id: cart
                             width: 90
-                            height: 40
+                            height: 45
                             border.color: "#90EE90"
                             color: "white"
                             radius: 10
                         }
                         Rectangle {
                             width: 90
-                            height: 40
+                            height: 45
                             border.color: "#90EE90"
                             color: "white"
                             radius: 10
@@ -134,10 +134,10 @@ Rectangle {
         // Speed Control Panel
         Rectangle {
             id: speedControls
-            width: 298
-            height: 461
+            width: 260
+            height: 430
             anchors.top: parent.top
-            anchors.topMargin: 15
+            anchors.topMargin: 10
             gradient: Gradient {
                 GradientStop {
                     position: 0.0
@@ -155,7 +155,7 @@ Rectangle {
             Column {
                 anchors.fill: parent
                 anchors.margins: 15
-                spacing: 40
+                spacing: 25
 
                 // Title
                 Text {
@@ -312,68 +312,13 @@ Rectangle {
             }
         }
 
-        // // //toggle part
-        // Rectangle {
-        //     // id: coordControls
-        //     width: 298
-        //     height: 461
-        //     anchors.top: parent.top
-        //     anchors.topMargin: 15
-        //     // color: "white"
-        //     gradient: Gradient {
-        //         GradientStop {
-        //             position: 0.0
-        //             color: "#F5F5F5"
-        //         } // Lighter shade
-        //         GradientStop {
-        //             position: 1.0
-        //             color: "#E0E0E0"
-        //         } // Original color
-        //     }
-        //     border.color: "#90EE90"
-        //     border.width: 1
-        //     radius: 10
-        //     Column {
-        //         // id: cartesianControl
-        //         spacing: 15
-        //         anchors.top: parent.top
-        //         anchors.topMargin: 15 // Adjust this to control spacing from the top
-        //         anchors.horizontalCenter: parent.horizontalCenter
-
-        //         Row {
-        //             spacing: 20
-
-        //             Text {
-        //                 text: "Cart"
-        //                 font.bold: true
-        //                 font.pixelSize: 22
-        //                 color: "black"
-        //                 x: 20
-        //             }
-        //             Switch {
-        //                 id: toggleSwitch
-        //                 checked: false
-        //                 Material.accent: checked ? "green" : "gray"
-        //             }
-
-        //             Text {
-        //                 text: "Jog"
-        //                 font.bold: true
-        //                 font.pixelSize: 22
-        //                 color: "black"
-        //                 x: 20
-        //             }
-        //         }
-        //     }
-        // }
-
         // Jog Control Panel
         Rectangle {
             id: jogPanel
-            width: 298
-            height: 461
+            width: 320
+            height: 430
             anchors.top: parent.top
-            anchors.topMargin: 15
+            anchors.topMargin: 10
             gradient: Gradient {
                 GradientStop {
                     position: 0.0
@@ -393,7 +338,7 @@ Rectangle {
                 id: toggleRow
                 anchors {
                     top: parent.top
-                    topMargin: 15
+                    topMargin: 10
                     horizontalCenter: parent.horizontalCenter
                 }
                 spacing: 20
@@ -424,10 +369,10 @@ Rectangle {
             Column {
                 anchors {
                     top: toggleRow.bottom
-                    topMargin: 20
+                    topMargin: 5
                     horizontalCenter: parent.horizontalCenter
                 }
-                spacing: 5
+                spacing: 2
 
                 Repeater {
                     model: ["X", "Y", "Z", "Rx", "Ry", "Rz"]
@@ -439,13 +384,13 @@ Rectangle {
                             text: "+"
                             font.bold: true
                             font.pixelSize: 30
-                            width: 100
+                            width: 105
                             height: 60
                             background: Rectangle {
                                 color: "#D3D3D3"
                                 radius: 15
                                 border.color: "#90EE90"
-                                border.width: 1
+                                border.width: 2
                             }
                             onPressed: background.color = "#A9A9A9"
                             onReleased: background.color = "#D3D3D3"
@@ -456,7 +401,7 @@ Rectangle {
                             text: modelData
                             font.bold: true
                             font.pixelSize: 20
-                            width: 30
+                            width: 35
                             horizontalAlignment: Text.AlignHCenter
                             anchors.verticalCenter: parent.verticalCenter
                         }
@@ -466,13 +411,13 @@ Rectangle {
                             text: "-"
                             font.bold: true
                             font.pixelSize: 30
-                            width: 100
+                            width: 105
                             height: 60
                             background: Rectangle {
                                 color: "#D3D3D3"
                                 radius: 15
                                 border.color: "#90EE90"
-                                border.width: 1
+                                border.width: 2
                             }
                             onPressed: background.color = "#A9A9A9"
                             onReleased: background.color = "#D3D3D3"
@@ -482,5 +427,705 @@ Rectangle {
             }
         }
         //finish
+    }
+
+    Rectangle {
+        id: working_buttons
+        // width: 939 + 10
+        // height: 280
+        anchors.top: parent.top
+        anchors.topMargin: 715
+        anchors.left: parent.left
+        anchors.leftMargin: 15
+        // gradient: Gradient {
+        //     GradientStop {
+        //         position: 0.0
+        //         color: "#F5F5F5"
+        //     }
+        //     GradientStop {
+        //         position: 1.0
+        //         color: "#E0E0E0"
+        //     }
+        // }
+        // border.color: "#90EE90"
+        // border.width: 2
+        // radius: 10
+        Rectangle {
+            anchors.top: parent.top
+            anchors.topMargin: 5
+            anchors.left: parent.left
+            anchors.leftMargin: 0
+
+            // First row
+            Button {
+                id: simButton
+                x: 0
+                y: 0
+                width: 144
+                height: 60
+                text: "Sim"
+                font.pixelSize: 20
+                font.bold: true
+
+                background: Rectangle {
+                    color: parent.pressed ? "#A9A9A9" : "#D3D3D3"
+                    border.color: "#90EE90"
+                    border.width: 2
+                    radius: 10
+                }
+            }
+
+            Button {
+                id: realButton
+                x: simButton.x + simButton.width + 15
+                y: 0
+                width: simButton.width
+                height: simButton.height
+                text: "Real"
+                font.pixelSize: 20
+                font.bold: true
+
+                background: Rectangle {
+                    color: parent.pressed ? "#A9A9A9" : "#D3D3D3"
+                    border.color: "#90EE90"
+                    border.width: 2
+                    radius: 10
+                }
+            }
+
+            Button {
+                id: onOffButton
+                x: realButton.x + realButton.width + 15
+                y: 0
+                width: simButton.width
+                height: simButton.height
+                text: "On_off"
+                font.pixelSize: 20
+                font.bold: true
+
+                background: Rectangle {
+                    color: parent.pressed ? "#A9A9A9" : "#D3D3D3"
+                    border.color: "#90EE90"
+                    border.width: 2
+                    radius: 10
+                }
+            }
+
+            Button {
+                id: errorClrButton
+                x: onOffButton.x + onOffButton.width + 15
+                y: 0
+                width: simButton.width
+                height: simButton.height
+                text: "Error_clr"
+                font.pixelSize: 20
+                font.bold: true
+
+                background: Rectangle {
+                    color: parent.pressed ? "#A9A9A9" : "#D3D3D3"
+                    border.color: "#90EE90"
+                    border.width: 2
+                    radius: 10
+                }
+            }
+
+            Button {
+                id: markClrButton
+                x: errorClrButton.x + errorClrButton.width + 15
+                y: 0
+                width: simButton.width
+                height: simButton.height
+                text: "Mark_clr"
+                font.pixelSize: 20
+                font.bold: true
+
+                background: Rectangle {
+                    color: parent.pressed ? "#A9A9A9" : "#D3D3D3"
+                    border.color: "#90EE90"
+                    border.width: 2
+                    radius: 10
+                }
+            }
+
+            Button {
+                id: homeButton
+                x: markClrButton.x + markClrButton.width + 15
+                y: 0
+                width: simButton.width
+                height: simButton.height
+                text: "Home"
+                font.pixelSize: 20
+                font.bold: true
+
+                background: Rectangle {
+                    color: parent.pressed ? "#A9A9A9" : "#D3D3D3"
+                    border.color: "#90EE90"
+                    border.width: 2
+                    radius: 10
+                }
+            }
+
+            // Second row
+            Button {
+                id: pauseRunButton
+                x: 0
+                y: simButton.y + simButton.height + 10
+                width: simButton.width
+                height: simButton.height
+                text: "Pause_run"
+                font.pixelSize: 20
+                font.bold: true
+
+                background: Rectangle {
+                    color: parent.pressed ? "#A9A9A9" : "#D3D3D3"
+                    border.color: "#90EE90"
+                    border.width: 2
+                    radius: 10
+                }
+            }
+
+            Button {
+                id: startStopButton
+                x: pauseRunButton.x + pauseRunButton.width + 15
+                y: pauseRunButton.y
+                width: simButton.width
+                height: simButton.height
+                text: "Start_stop"
+                font.pixelSize: 20
+                font.bold: true
+
+                background: Rectangle {
+                    color: parent.pressed ? "#A9A9A9" : "#D3D3D3"
+                    border.color: "#90EE90"
+                    border.width: 2
+                    radius: 10
+                }
+            }
+
+            Button {
+                id: exitButton
+                x: startStopButton.x + startStopButton.width + 15
+                y: pauseRunButton.y
+                width: simButton.width
+                height: simButton.height
+                text: "Exit"
+                font.pixelSize: 20
+                font.bold: true
+
+                background: Rectangle {
+                    color: parent.pressed ? "#A9A9A9" : "#D3D3D3"
+                    border.color: "#90EE90"
+                    border.width: 2
+                    radius: 10
+                }
+            }
+
+            Button {
+                id: closeButton
+                x: exitButton.x + exitButton.width + 15
+                y: pauseRunButton.y
+                width: simButton.width
+                height: simButton.height
+                text: "Close"
+                font.pixelSize: 20
+                font.bold: true
+
+                background: Rectangle {
+                    color: parent.pressed ? "#A9A9A9" : "#D3D3D3"
+                    border.color: "#90EE90"
+                    border.width: 2
+                    radius: 10
+                }
+            }
+
+            Button {
+                id: speedOpButton
+                x: closeButton.x + closeButton.width + 15
+                y: pauseRunButton.y
+                width: simButton.width
+                height: simButton.height
+                text: "Speed op"
+                font.pixelSize: 20
+                font.bold: true
+
+                background: Rectangle {
+                    color: parent.pressed ? "#A9A9A9" : "#D3D3D3"
+                    border.color: "#90EE90"
+                    border.width: 2
+                    radius: 10
+                }
+            }
+            Rectangle {
+                id: textfield_1
+                x: speedOpButton.x + speedOpButton.width + 15
+                y: pauseRunButton.y + 5
+                width: simButton.width
+                height: simButton.height - 10
+                color: "white"
+                border.color: "#90EE90"
+                radius: 10
+            }
+
+            // Third row
+            Rectangle {
+                id: textfield_2
+                x: 0
+                y: pauseRunButton.y + pauseRunButton.height + 15
+                width: simButton.width
+                height: simButton.height - 10
+                color: "white"
+                border.color: "#90EE90"
+                radius: 10
+            }
+            Button {
+                id: addToolButton
+                x: startStopButton.x
+                y: pauseRunButton.y + pauseRunButton.height + 10
+                width: simButton.width
+                height: simButton.height
+                text: "Add tool"
+                font.pixelSize: 20
+                font.bold: true
+
+                background: Rectangle {
+                    color: parent.pressed ? "#A9A9A9" : "#D3D3D3"
+                    border.color: "#90EE90"
+                    border.width: 2
+                    radius: 10
+                }
+            }
+
+            Button {
+                id: toolIpButton
+                x: exitButton.x
+                y: addToolButton.y
+                width: simButton.width
+                height: simButton.height
+                text: "Tool ip"
+                font.pixelSize: 20
+                font.bold: true
+
+                background: Rectangle {
+                    color: parent.pressed ? "#A9A9A9" : "#D3D3D3"
+                    border.color: "#90EE90"
+                    border.width: 2
+                    radius: 10
+                }
+            }
+            Rectangle {
+                id: textfield_3
+                x: toolIpButton.x + toolIpButton.width + 15
+                y: pauseRunButton.y + pauseRunButton.height + 15
+                width: simButton.width
+                height: simButton.height - 10
+                color: "white"
+                border.color: "#90EE90"
+                radius: 10
+            }
+
+            // Fourth row
+            Rectangle {
+                id: textfield_4
+                x: 0
+                y: textfield_2.y + textfield_2.height + 20
+                width: simButton.width
+                height: simButton.height - 10
+                color: "white"
+                border.color: "#90EE90"
+                radius: 10
+            }
+            Button {
+                id: tpFileButton
+                x: startStopButton.x
+                y: textfield_2.y + textfield_2.height + 15
+                width: simButton.width
+                height: simButton.height
+                text: "Tp file"
+                font.pixelSize: 20
+                font.bold: true
+
+                background: Rectangle {
+                    color: parent.pressed ? "#A9A9A9" : "#D3D3D3"
+                    border.color: "#90EE90"
+                    border.width: 2
+                    radius: 10
+                }
+            }
+            Rectangle {
+                id: textfield_5
+                x: exitButton.x
+                y: textfield_4.y
+                width: simButton.width
+                height: simButton.height - 10
+                color: "white"
+                border.color: "#90EE90"
+                radius: 10
+            }
+
+            Button {
+                id: pgFileButton
+                x: closeButton.x
+                y: tpFileButton.y
+                width: simButton.width
+                height: simButton.height
+                text: "Pg file"
+                font.pixelSize: 20
+                font.bold: true
+
+                background: Rectangle {
+                    color: parent.pressed ? "#A9A9A9" : "#D3D3D3"
+                    border.color: "#90EE90"
+                    border.width: 2
+                    radius: 10
+                }
+            }
+            Rectangle {
+                id: textfield_6
+                x: speedOpButton.x
+                y: textfield_4.y
+                width: simButton.width
+                height: simButton.height - 10
+                color: "white"
+                border.color: "#90EE90"
+                radius: 10
+            }
+        }
+    }
+
+    Rectangle {
+        id: table_1
+        anchors.top: parent.top
+        anchors.topMargin: 455
+        anchors.left: parent.left
+        anchors.leftMargin: 970
+        width: 920
+        height: 180
+        color: "#ffffff"
+    }
+    Rectangle {
+        id: rectangle2
+        anchors.top: parent.top
+        anchors.topMargin: 650
+        anchors.left: parent.left
+        anchors.leftMargin: 970
+        // width: 920
+        // height: 350
+        // color: "#ffffff"
+
+        //First row
+        Button {
+            id: insertprg
+            x: 0
+            y: 0
+            width: 125
+            height: 50
+            text: "Insert_prg"
+            font.pixelSize: 16
+            font.bold: true
+
+            background: Rectangle {
+                color: parent.pressed ? "#A9A9A9" : "#D3D3D3"
+                border.color: "#90EE90"
+                border.width: 2
+                radius: 10
+            }
+        }
+        Button {
+            id: deleteprg
+            x: insertprg.x + insertprg.width + 8
+            y: 0
+            width: insertprg.width
+            height: insertprg.height
+            text: "Delete_prg"
+            font.pixelSize: 14
+            font.bold: true
+
+            background: Rectangle {
+                color: parent.pressed ? "#A9A9A9" : "#D3D3D3"
+                border.color: "#90EE90"
+                border.width: 2
+                radius: 10
+            }
+        }
+        Button {
+            id: newprg
+            x: deleteprg.x + deleteprg.width + 8
+            y: 0
+            width: insertprg.width
+            height: insertprg.height
+            text: "New_prg_file"
+            font.pixelSize: 14
+            font.bold: true
+
+            background: Rectangle {
+                color: parent.pressed ? "#A9A9A9" : "#D3D3D3"
+                border.color: "#90EE90"
+                border.width: 2
+                radius: 10
+            }
+        }
+        Button {
+            id: delprg
+            x: newprg.x + newprg.width + 8
+            y: 0
+            width: insertprg.width
+            height: insertprg.height
+            text: "Del_prg_file"
+            font.pixelSize: 14
+            font.bold: true
+
+            background: Rectangle {
+                color: parent.pressed ? "#A9A9A9" : "#D3D3D3"
+                border.color: "#90EE90"
+                border.width: 2
+                radius: 10
+            }
+        }
+        Button {
+            id: openprg
+            x: delprg.x + delprg.width + 8
+            y: 0
+            width: insertprg.width
+            height: insertprg.height
+            text: "Open_prg_file"
+            font.pixelSize: 14
+            font.bold: true
+
+            background: Rectangle {
+                color: parent.pressed ? "#A9A9A9" : "#D3D3D3"
+                border.color: "#90EE90"
+                border.width: 2
+                radius: 10
+            }
+        }
+        Button {
+            id: runprg
+            x: openprg.x + openprg.width + 8
+            y: 0
+            width: insertprg.width
+            height: insertprg.height
+            text: "Run_prg"
+            font.pixelSize: 16
+            font.bold: true
+
+            background: Rectangle {
+                color: parent.pressed ? "#A9A9A9" : "#D3D3D3"
+                border.color: "#90EE90"
+                border.width: 2
+                radius: 10
+            }
+        }
+        Button {
+            id: trjfile
+            x: runprg.x + runprg.width + 8
+            y: 0
+            width: insertprg.width
+            height: insertprg.height
+            text: "Trj_file"
+            font.pixelSize: 16
+            font.bold: true
+
+            background: Rectangle {
+                color: parent.pressed ? "#A9A9A9" : "#D3D3D3"
+                border.color: "#90EE90"
+                border.width: 2
+                radius: 10
+            }
+        }
+
+        //Second row
+        Button {
+            id: xyz
+            x: 0
+            y: insertprg.y + insertprg.height + 5
+            width: insertprg.width
+            height: insertprg.height
+            text: "XYZ"
+            font.pixelSize: 16
+            font.bold: true
+
+            background: Rectangle {
+                color: parent.pressed ? "#A9A9A9" : "#D3D3D3"
+                border.color: "#90EE90"
+                border.width: 2
+                radius: 10
+            }
+        }
+        Button {
+            id: add_tp
+            x: insertprg.x + insertprg.width + 8
+            y: xyz.y
+            width: insertprg.width
+            height: insertprg.height
+            text: "Add_Tp"
+            font.pixelSize: 16
+            font.bold: true
+
+            background: Rectangle {
+                color: parent.pressed ? "#A9A9A9" : "#D3D3D3"
+                border.color: "#90EE90"
+                border.width: 2
+                radius: 10
+            }
+        }
+        Button {
+            id: insert_tp
+            x: deleteprg.x + deleteprg.width + 8
+            y: xyz.y
+            width: insertprg.width
+            height: insertprg.height
+            text: "Insert_Tp"
+            font.pixelSize: 16
+            font.bold: true
+
+            background: Rectangle {
+                color: parent.pressed ? "#A9A9A9" : "#D3D3D3"
+                border.color: "#90EE90"
+                border.width: 2
+                radius: 10
+            }
+        }
+        Button {
+            id: del_tp
+            x: newprg.x + newprg.width + 8
+            y: xyz.y
+            width: insertprg.width
+            height: insertprg.height
+            text: "Delete_Tp"
+            font.pixelSize: 16
+            font.bold: true
+
+            background: Rectangle {
+                color: parent.pressed ? "#A9A9A9" : "#D3D3D3"
+                border.color: "#90EE90"
+                border.width: 2
+                radius: 10
+            }
+        }
+        Button {
+            id: new_tp
+            x: delprg.x + delprg.width + 8
+            y: xyz.y
+            width: insertprg.width
+            height: insertprg.height
+            text: "New_Tp"
+            font.pixelSize: 16
+            font.bold: true
+
+            background: Rectangle {
+                color: parent.pressed ? "#A9A9A9" : "#D3D3D3"
+                border.color: "#90EE90"
+                border.width: 2
+                radius: 10
+            }
+        }
+        Button {
+            id: open_tp
+            x: openprg.x + openprg.width + 8
+            y: xyz.y
+            width: insertprg.width
+            height: insertprg.height
+            text: "Open_Tp"
+            font.pixelSize: 16
+            font.bold: true
+
+            background: Rectangle {
+                color: parent.pressed ? "#A9A9A9" : "#D3D3D3"
+                border.color: "#90EE90"
+                border.width: 2
+                radius: 10
+            }
+        }
+        Button {
+            id: save_tp
+            x: runprg.x + runprg.width + 8
+            y: xyz.y
+            width: insertprg.width
+            height: insertprg.height
+            text: "Save_Tp"
+            font.pixelSize: 16
+            font.bold: true
+
+            background: Rectangle {
+                color: parent.pressed ? "#A9A9A9" : "#D3D3D3"
+                border.color: "#90EE90"
+                border.width: 2
+                radius: 10
+            }
+        }
+    }
+    Rectangle {
+        id: rectangle_2
+        anchors.top: parent.top
+        anchors.topMargin: 765
+        anchors.left: parent.left
+        anchors.leftMargin: 970
+        //First Row
+        Button {
+            id: prg_ip
+            x: 0
+            y: 0
+            width: 125
+            height: 50
+            text: "Prg ip"
+            font.pixelSize: 16
+            font.bold: true
+
+            background: Rectangle {
+                color: parent.pressed ? "#A9A9A9" : "#D3D3D3"
+                border.color: "#90EE90"
+                border.width: 2
+                radius: 10
+            }
+        }
+        Rectangle {
+            id: textfield_7
+            x: prg_ip.x + prg_ip.width + 8
+            y: 5
+            width: 125
+            height: 40
+            color: "white"
+            border.color: "#90EE90"
+            radius: 10
+        }
+
+        //Second Row
+        Button {
+            id: prg_op
+            x: 0
+            y: prg_ip.x + prg_ip.height + 5
+            width: 125
+            height: 50
+            text: "Prg op"
+            font.pixelSize: 16
+            font.bold: true
+
+            background: Rectangle {
+                color: parent.pressed ? "#A9A9A9" : "#D3D3D3"
+                border.color: "#90EE90"
+                border.width: 2
+                radius: 10
+            }
+        }
+        Rectangle {
+            id: textfield_8
+            x: prg_ip.x + prg_ip.width + 8
+            y: prg_ip.x + prg_ip.height + 10
+            width: 125
+            height: 40
+            color: "white"
+            border.color: "#90EE90"
+            radius: 10
+        }
+    }
+    Rectangle {
+        id: table_2
+        anchors.top: parent.top
+        anchors.topMargin: 765
+        anchors.left: parent.left
+        anchors.leftMargin: 1240
+        width: 650
+        height: 105
+        color: "#ffffff"
     }
 }
