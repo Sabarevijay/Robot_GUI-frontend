@@ -1128,4 +1128,245 @@ Rectangle {
         height: 105
         color: "#ffffff"
     }
+    Rectangle {
+        id: rectangle_3
+        anchors.top: parent.top
+        anchors.topMargin: 880
+        anchors.left: parent.left
+        anchors.leftMargin: 970
+
+        //First Row
+        Button {
+            id: instruction
+            x: 0
+            y: 0
+            width: 108
+            height: 50
+            text: "Instruction"
+            font.pixelSize: 16
+            font.bold: true
+
+            background: Rectangle {
+                color: parent.pressed ? "#A9A9A9" : "#D3D3D3"
+                border.color: "#90EE90"
+                border.width: 2
+                radius: 10
+            }
+        }
+        Button {
+            id: inst
+            x: instruction.x + instruction.width + 8
+            y: 0
+            width: instruction.width
+            height: instruction.height
+            text: "INST"
+            font.pixelSize: 16
+            font.bold: true
+
+            background: Rectangle {
+                color: parent.pressed ? "#A9A9A9" : "#D3D3D3"
+                border.color: "#90EE90"
+                border.width: 2
+                radius: 10
+            }
+        }
+        Button {
+            id: h_l
+            x: inst.x + inst.width + 8
+            y: 0
+            width: instruction.width
+            height: instruction.height
+            text: "H/L"
+            font.pixelSize: 16
+            font.bold: true
+
+            background: Rectangle {
+                color: parent.pressed ? "#A9A9A9" : "#D3D3D3"
+                border.color: "#90EE90"
+                border.width: 2
+                radius: 10
+            }
+        }
+        Button {
+            id: high
+            x: h_l.x + h_l.width + 8
+            y: 0
+            width: instruction.width
+            height: instruction.height
+            text: "High"
+            font.pixelSize: 16
+            font.bold: true
+
+            background: Rectangle {
+                color: parent.pressed ? "#A9A9A9" : "#D3D3D3"
+                border.color: "#90EE90"
+                border.width: 2
+                radius: 10
+            }
+        }
+        Button {
+            id: delay_ms
+            x: high.x + high.width + 8
+            y: 0
+            width: instruction.width
+            height: instruction.height
+            text: "Delay_ms"
+            font.pixelSize: 16
+            font.bold: true
+
+            background: Rectangle {
+                color: parent.pressed ? "#A9A9A9" : "#D3D3D3"
+                border.color: "#90EE90"
+                border.width: 2
+                radius: 10
+            }
+        }
+        Rectangle {
+            id: textfield_9
+            x: delay_ms.x + delay_ms.width + 8
+            y: 5
+            width: instruction.width
+            height: instruction.height - 10
+            color: "white"
+            border.color: "#90EE90"
+            radius: 10
+        }
+        Button {
+            id: loop
+            x: textfield_9.x + textfield_9.width + 8
+            y: 0
+            width: instruction.width
+            height: instruction.height
+            text: "Loop"
+            font.pixelSize: 16
+            font.bold: true
+
+            background: Rectangle {
+                color: parent.pressed ? "#A9A9A9" : "#D3D3D3"
+                border.color: "#90EE90"
+                border.width: 2
+                radius: 10
+            }
+        }
+        Rectangle {
+            id: textfield_10
+            x: loop.x + loop.width + 8
+            y: 5
+            width: instruction.width
+            height: instruction.height - 10
+            color: "white"
+            border.color: "#90EE90"
+            radius: 10
+        }
+
+        //Second Row
+        Button {
+            id: mm_s
+            x: 0
+            y: instruction.y + instruction.height + 8
+            width: 108
+            height: 50
+            text: "mm/s"
+            font.pixelSize: 16
+            font.bold: true
+
+            background: Rectangle {
+                color: parent.pressed ? "#A9A9A9" : "#D3D3D3"
+                border.color: "#90EE90"
+                border.width: 2
+                radius: 10
+            }
+        }
+        Rectangle {
+            id: textfield_11
+            x: instruction.x + instruction.width + 8
+            y: mm_s.y + 5
+            width: instruction.width
+            height: instruction.height - 10
+            color: "white"
+            border.color: "#90EE90"
+            radius: 10
+        }
+        Button {
+            id: radius
+            x: inst.x + inst.width + 8
+            y: mm_s.y
+            width: instruction.width
+            height: instruction.height
+            text: "Radiu"
+            font.pixelSize: 16
+            font.bold: true
+
+            background: Rectangle {
+                color: parent.pressed ? "#A9A9A9" : "#D3D3D3"
+                border.color: "#90EE90"
+                border.width: 2
+                radius: 10
+            }
+        }
+        Rectangle {
+            id: textfield_12
+            x: h_l.x + h_l.width + 8
+            y: mm_s.y + 5
+            width: instruction.width
+            height: instruction.height - 10
+            color: "white"
+            border.color: "#90EE90"
+            radius: 10
+        }
+        Button {
+            id: an_ip
+            x: high.x + high.width + 8
+            y: mm_s.y
+            width: instruction.width
+            height: instruction.height
+            text: "AN_ip"
+            font.pixelSize: 16
+            font.bold: true
+
+            background: Rectangle {
+                color: parent.pressed ? "#A9A9A9" : "#D3D3D3"
+                border.color: "#90EE90"
+                border.width: 2
+                radius: 10
+            }
+        }
+        Rectangle {
+            id: textfield_13
+            x: delay_ms.x + delay_ms.width + 8
+            y: mm_s.y + 5
+            width: instruction.width
+            height: instruction.height - 10
+            color: "white"
+            border.color: "#90EE90"
+            radius: 10
+        }
+        Button {
+            id: an_op
+            x: textfield_9.x + textfield_9.width + 8
+            y: mm_s.y
+            width: instruction.width
+            height: instruction.height
+            text: "AN_op"
+            font.pixelSize: 16
+            font.bold: true
+
+            background: Rectangle {
+                color: parent.pressed ? "#A9A9A9" : "#D3D3D3"
+                border.color: "#90EE90"
+                border.width: 2
+                radius: 10
+            }
+        }
+        Rectangle {
+            id: textfield_14
+            x: loop.x + loop.width + 8
+            y: mm_s.y + 5
+            width: instruction.width
+            height: instruction.height - 10
+            color: "white"
+            border.color: "#90EE90"
+            radius: 10
+        }
+    }
 }
